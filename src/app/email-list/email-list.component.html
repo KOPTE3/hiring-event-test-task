@@ -1,0 +1,88 @@
+<div class="container">
+  <span class="title">Email Viewer</span>
+  <br />
+  <div class="header-wrapper">
+    <div class="input-wrapper">
+      <label>
+        Search query
+        <input [(ngModel)]="searchQuery" class="search-input" placeholder="Search query" />
+      </label>
+    </div>
+    <div class="input-wrapper">
+      <label class="page-size-input">
+        Page size
+        <select [(ngModel)]="pageSize">
+          <option value="20">20</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+        </select>
+      </label>
+    </div>
+  </div>
+  <br />
+  <div class="pagination-wrapper">
+    <app-pagination
+      [(currentPage)]="currentPage"
+      [contentLength]="allEmails.length"
+      [pageSize]="pageSize"
+    ></app-pagination>
+  </div>
+
+  <div class="divider-header"></div>
+
+  <div
+    *ngFor="
+      let item of allEmails
+        | filter: searchQuery
+        | pagination: { pageSize: pageSize, currentPage: currentPage }
+    "
+    class="list-item-wrapper"
+  >
+    <div class="from-item mt1">
+      <span class="item-label">From: </span>
+      {{ item.from }}
+    </div>
+
+    <div class="to-item mt1">
+      <span class="item-label">To: </span>
+      {{ item.to }}
+    </div>
+
+    <div class="bcc-item mt1">
+      <span class="item-label">Bcc: </span>
+      {{ item.bcc }}
+    </div>
+
+    <div class="cc-item mt1">
+      <span class="item-label">Cc: </span>
+      {{ item.cc }}
+    </div>
+
+    <div class="date-item mt1">
+      <span class="item-label">Date: </span>
+      <span>{{ item.date | date }}</span>
+    </div>
+
+    <div class="subject-item mt1">
+      <span class="item-label">Subject: </span>
+      <span [innerHTML]="item.subject | highlight: searchQuery"></span>
+    </div>
+
+    <div class="body-item mt1">
+      <span class="item-label">Body: </span>
+      <pre
+        class="body-content"
+      ><code [innerHTML]="item.body | highlight: searchQuery" class="space-lines mt0"> </code></pre>
+    </div>
+
+    <div class="divider"></div>
+  </div>
+
+  <div class="pagination-wrapper">
+    <app-pagination
+      [(currentPage)]="currentPage"
+      [contentLength]="allEmails.length"
+      [pageSize]="pageSize"
+    ></app-pagination>
+  </div>
+</div>

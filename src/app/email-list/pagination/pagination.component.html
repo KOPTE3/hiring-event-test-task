@@ -1,0 +1,7 @@
+<button
+  [class.current]="pageMeta.current"
+  *ngFor="let pageMeta of pages"
+  (click)="choosePage(pageMeta.page)"
+>
+  {{ pageMeta.from }}&ndash;{{ pageMeta.to }}
+</button>

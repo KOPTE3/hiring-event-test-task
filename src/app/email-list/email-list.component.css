@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  padding: 48px 96px;
+  flex-direction: column;
+  letter-spacing: 1px;
+}
+
+.input-wrapper {
+  flex-grow: 1;
+}
+
+input {
+  height: 40px;
+  border: none;
+  border: 1px solid gainsboro;
+  margin: 16px 0;
+  box-shadow: none;
+  padding-left: 16px;
+  font-size: 18px;
+  width: 400px;
+}
+
+input:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: gainsboro;
+}
+
+.body-item {
+  text-justify: inter-character;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  white-space: pre-wrap;
+}
+
+.body-content {
+  white-space: break-spaces;
+}
+
+.highlight-blue {
+  background-color: #2199e8;
+  color: black;
+}
+
+.title {
+  align-self: center;
+  color: #2199e8;
+  font-size: 40px;
+  width: 400px;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-label {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.list-item-wrapper {
+  color: gray;
+  font-size: 18px;
+}
+
+.divider {
+  width: 100%;
+  margin: 32px 0;
+  border-top: 1px solid gainsboro;
+}
+
+.divider-header {
+  width: 100%;
+  height: 4px;
+  border-top: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+  margin: 16px 0;
+}
+
+.pagination-wrapper {
+}
+
+.mt0 {
+  margin-top: 4px;
+}
+
+.mt1 {
+  margin-top: 8px;
+}
+
+.space-lines {
+  line-height: 1.15;
+}

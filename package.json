@@ -6,7 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "lint": "prettier --write './src'"
+    "lint": "prettier --write './src'",
+    "postinstall": "ngcc"
   },
   "dependencies": {
     "@angular/animations": "~11.2.8",
